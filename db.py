@@ -14,7 +14,7 @@ def log(user_id: int, first_name:str , request_time: str):
     conn.commit()
     conn.close()
 
-def init_db():
+async def init_db():
     conn = sqlite3.connect('logs.db')
     cursor = conn.cursor()
     
