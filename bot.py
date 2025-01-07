@@ -26,7 +26,7 @@ def run_uvicorn():
 
 async def run_tasks():
     # Start the database initialization and main task concurrently
-    await asyncio.gather(init_db()
+    await asyncio.gather(init_db())
 
                          
 @dp.message()
