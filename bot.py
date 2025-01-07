@@ -9,6 +9,9 @@ from fastapi import FastAPI
 
 load_dotenv()
 app = FastAPI()
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=6000)
 logging.basicConfig(level=logging.INFO)
 
 
