@@ -5,9 +5,10 @@ import os
 from handlers import time_split, save_user
 from dotenv import load_dotenv
 from db import init_db  
+from fastapi import FastAPI
 
 load_dotenv()
-
+app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 
 
@@ -27,5 +28,7 @@ async def main():
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=5000)
     init_db()
     asyncio.run(main())
